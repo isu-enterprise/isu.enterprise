@@ -23,7 +23,6 @@ install_requires = [
     # "<package1>==0.1",
     # "<package2>==0.3.0",
     # "nose", "coverage"   # Put it here.
-    "pyramid",
     "zope.component[zcml]",
     "psycopg2"
 ]
