@@ -6,6 +6,8 @@ from zope.component import getUtility, getAdapter
 import isu.enterprise.sqlstorage
 from nose.tools import nottest
 from nose.plugins.skip import Skip
+
+
 class IsuEnterpriseTests:
     def setUp(self):
         pass
@@ -16,8 +18,8 @@ class IsuEnterpriseTests:
     def tearDown(self):
         pass
 
+    class TestEntryImplementation:
 
-class TestEntryImplementation:
     def setUp(self):
         self.e = Entry("50", "71", 1000)
 
@@ -34,6 +36,7 @@ class TestEntryImplementation:
         assert self.e.cr == "50", "wrong credit account"
         assert self.e.currency == 643
         assert self.e.moment is not None
+
 
 class TestStorage:
     def setUp(self):
@@ -52,14 +55,13 @@ class TestPostgesStorageAdapter(TestEntryImplementation):
         self.store.store(self.e)
         assert hasattr(self.e, "__sql_id__")
         sql_id = self.e.__sql_id__
-        assert sql_id>0
-        self.e.dr="51"
+        assert sql_id > 0
+        self.e.dr = "51"
         self.store.store(self.e)
-        assert sql_id==self.e.__sql_id__
+        assert sql_id == self.e.__sql_id__
 
     def test_load(self):
         self.store.store(self.e)
         id = self.e.__sql_id__
         e = self.store.load(klass=Entry, id=id)
-        assert e.cr==self.e.cr
-
+        assert e.cr == self.e.cr
