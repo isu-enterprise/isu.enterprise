@@ -18,7 +18,7 @@ class IsuEnterpriseTests:
     def tearDown(self):
         pass
 
-    class TestEntryImplementation:
+class TestEntryImplementation:
 
     def setUp(self):
         self.e = Entry("50", "71", 1000)
