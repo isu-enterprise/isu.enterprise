@@ -12,12 +12,11 @@ import enum  # FIXME: Оформит словари в отделный подм
 
 
 _ = _N = MessageFactory("isu.enterprise")
-#def _(x):
-#    return x
 
 
-# def _(s):
-#     return repr(_N(s))
+class IApplication(Interface):
+    """The interface denote application, used
+    for notification and utility definition."""
 
 
 class IAccountingEntry(Interface):
