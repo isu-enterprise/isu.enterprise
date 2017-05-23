@@ -1,10 +1,7 @@
 nose
 zope.component[zcml]
 zope.i18nmessageid
-psycopg2
-pyramid
-chameleon
-pyramid_chameleon
+#psycopg2
 pudb
 #-e git+https://github.com/isu-enterprise/isu.alchemy#egg=isu.alchemy
 #-e git+https://github.com/isu-enterprise/isu.gui.gtk#egg=isu.onece
