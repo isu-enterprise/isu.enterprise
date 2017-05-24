@@ -15,6 +15,10 @@ _ = _N = MessageFactory("isu.enterprise")
 #     return repr(_N(s))
 
 
+class IApplication(Interface):
+    """Interface to mark application instance."""
+
+
 class IAccountingEntry(Interface):
     cr = Attribute("Credit account")
     dr = Attribute("Debit account")
