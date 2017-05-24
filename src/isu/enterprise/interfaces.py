@@ -1,5 +1,8 @@
 # encoding:utf-8
 from zope.interface import Interface, Attribute, implementer, directlyProvides
+import sys
+from pprint import pprint
+pprint(sys.path)
 from zope.i18nmessageid import MessageFactory
 import zope.schema
 import enum  # FIXME: Оформит словари в отделный подмодуль.
@@ -11,8 +14,9 @@ import enum  # FIXME: Оформит словари в отделный подм
 _ = _N = MessageFactory("isu.enterprise")
 
 
-# def _(s):
-#     return repr(_N(s))
+class IApplication(Interface):
+    """The interface denote application, used
+    for notification and utility definition."""
 
 
 class IApplication(Interface):

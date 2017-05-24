@@ -9,8 +9,8 @@ import sys, os
 from setuptools.extension import Extension
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.md')).read()
-NEWS = open(os.path.join(here, 'NEWS.rst')).read()
+README = open(os.path.join(here, 'README.md'), encoding="utf-8").read()
+NEWS = open(os.path.join(here, 'NEWS.rst'), encoding="utf-8").read()
 
 
 version = '0.1'
