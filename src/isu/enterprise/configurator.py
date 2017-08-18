@@ -1,16 +1,17 @@
 from isu.enterprise.interfaces import IConfigurator
-from zope.component import getGlobalSiteManager
+from zope.component import getSiteManager
 import sys
+import os
+
 if sys.version_info.major > 2:
     from configparser import ConfigParser, ExtendedInterpolation
 else:
     from ConfigParser import ConfigParser  # , ExtendedInterpolation
-import os
 
 
 def registerConfigurator(obj, registry=None, name=""):
     if registry is None:
-        registry = getGlobalSiteManager()
+        registry = getSiteManager()
     registry.registerUtility(obj,
                              provided=IConfigurator,
                              name=name)
@@ -23,8 +24,3 @@ def createConfigurator(ini, registry=None, name=""):
     conf.read(ini)
     registerConfigurator(conf, registry=registry, name=name)
     return conf
-
-
-def initZCML():
-    package = __name__
-    xmlconfig(resource_stream(package, "configure.zcml"))

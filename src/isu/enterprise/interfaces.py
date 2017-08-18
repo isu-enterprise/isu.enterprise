@@ -2,7 +2,6 @@
 from zope.interface import Interface, Attribute, implementer, directlyProvides
 import sys
 from pprint import pprint
-pprint(sys.path)
 from zope.i18nmessageid import MessageFactory
 import zope.schema
 import enum  # FIXME: Оформит словари в отделный подмодуль.
