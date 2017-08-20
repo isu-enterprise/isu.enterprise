@@ -18,6 +18,10 @@ class IApplication(Interface):
     for notification and utility definition."""
 
 
+class IApplication(Interface):
+    """Interface to mark application instance."""
+
+
 class IAccountingEntry(Interface):
     cr = Attribute("Credit account")
     dr = Attribute("Debit account")
