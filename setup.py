@@ -24,7 +24,7 @@ install_requires = [
     # "<package2>==0.3.0",
     # "nose", "coverage"   # Put it here.
     "zope.component[zcml]",
-    "psycopg2"
+    #"psycopg2"
 ]
 
 tests_requires = [
